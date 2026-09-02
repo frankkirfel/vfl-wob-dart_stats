@@ -1,3 +1,5 @@
+const s8s_DARTCLUB         = "VfL Wolfsburg e.V."
+const s8s_TEAMS            = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"];
 const s8s_SORT_DESC        = parseInt('1000000000000000', 2);
 const s8s_SORT_NO_TOGGLE   = parseInt('0100000000000000', 2);
 const s8s_SORT_BY_PLATZ    = parseInt('0000000000000001', 2);
@@ -19,22 +21,12 @@ var s8s_sortFlags = 0;
 
 var s8s_FILTER_EINZEL = parseInt('1000000000000000', 2);
 var s8s_FILTER_DOPPEL = parseInt('0100000000000000', 2);
-var s8s_FILTER_TEAM_A = 0;
-var s8s_FILTER_TEAM_B = 0;
-var s8s_FILTER_TEAM_C = 0;
-var s8s_FILTER_TEAM_D = 0;
-var s8s_FILTER_TEAM_E = 0;
-var s8s_FILTER_TEAM_F = 0;
-var s8s_FILTER_TEAM_G = 0;
-var s8s_FILTER_TEAM_H = 0;
-var s8s_FILTER_TEAM_I = 0;
-var s8s_FILTER_TEAM_J = 0;
-var s8s_FILTER_TEAM_K = 0;
-var s8s_FILTER_TEAM_L = 0;
-var s8s_FILTER_TEAM_M = 0;
-var s8s_FILTER_TEAM_N = 0;
 
-var s8s_filterFlags     = parseInt('1111111111111111', 2);
+for (i=0; i<s8s_TEAMS.length; i++) {
+	eval('var s8s_FILTER_TEAM_' + s8s_TEAMS[i] + ' = 0;');
+}
+
+var s8s_filterFlags = parseInt('1111111111111111', 2);
 
 
 var s8s_init_players = [];
@@ -221,7 +213,7 @@ function s8s_selDartclubs() {
 		}
 	}
 	
-	sel.value = "VfL Wolfsburg e.V.";
+	sel.value = s8s_DARTCLUB;
 	select_dartclub();
 }
 
@@ -304,7 +296,7 @@ function select_dartclub() {
 	
 	var inner_html = "<tr><td><input type=\"checkbox\" id=\"einzel\" name=\"einzel\" value=\"32768\" checked onchange=\"s8s_setFilter(this);\"><label for=\"einzel\"> Einzel</label></td><td><input type=\"checkbox\" id=\"doppel\" name=\"doppel\" value=\"16384\" checked onchange=\"s8s_setFilter(this);\"><label for=\"doppel\"> Doppel</label></td><td style=\"width:5em; text-align:right;\" onclick=\"invert_team_chkboxes();\" onmouseover=\"this.style.cursor='pointer'\">Teams:</td>";
 	
-	s8s_filterFlags     = parseInt('1111111111111111', 2);
+	s8s_filterFlags = parseInt('1111111111111111', 2);
 	
 	for (i=0; i<teams.length; i++) {
 		eval('s8s_FILTER_TEAM_' + teams[i] + ' = ' + (2**i) + ';');
@@ -335,121 +327,15 @@ function load_player_stats() {
 		if (s8s_init_players[i].Team.startsWith(s8s_$("dartclubs").value)) {
 			if ((s8s_filterFlags & s8s_FILTER_EINZEL) > 0) { 
 				if (!s8s_init_players[i].Spieler.includes(" & ")) {
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_A) > 0) {
-						if (s8s_init_players[i].Team.endsWith("A"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_B) > 0) {
-						if (s8s_init_players[i].Team.endsWith("B"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_C) > 0) {
-						if (s8s_init_players[i].Team.endsWith("C"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_D) > 0) {
-						if (s8s_init_players[i].Team.endsWith("D"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_E) > 0) {
-						if (s8s_init_players[i].Team.endsWith("E"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_F) > 0) {
-						if (s8s_init_players[i].Team.endsWith("F"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_G) > 0) {
-						if (s8s_init_players[i].Team.endsWith("G"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_H) > 0) {
-						if (s8s_init_players[i].Team.endsWith("H"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_I) > 0) {
-						if (s8s_init_players[i].Team.endsWith("I"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_J) > 0) {
-						if (s8s_init_players[i].Team.endsWith("J"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_K) > 0) {
-						if (s8s_init_players[i].Team.endsWith("K"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_L) > 0) {
-						if (s8s_init_players[i].Team.endsWith("L"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_M) > 0) {
-						if (s8s_init_players[i].Team.endsWith("M"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_N) > 0) {
-						if (s8s_init_players[i].Team.endsWith("N"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
+					for (j=0; j<s8s_TEAMS.length; j++) {
+						eval('if ((s8s_filterFlags & s8s_FILTER_TEAM_' + s8s_TEAMS[j] + ') > 0) {if (s8s_init_players[i].Team.endsWith("' + s8s_TEAMS[j] + '"))s8s_players.push(structuredClone(s8s_init_players[i]));}');
 					}
 				}
 			}
 			if ((s8s_filterFlags & s8s_FILTER_DOPPEL) > 0) { 
 				if (s8s_init_players[i].Spieler.includes(" & ")) {
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_A) > 0) {
-						if (s8s_init_players[i].Team.endsWith("A"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_B) > 0) {
-						if (s8s_init_players[i].Team.endsWith("B"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_C) > 0) {
-						if (s8s_init_players[i].Team.endsWith("C"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_D) > 0) {
-						if (s8s_init_players[i].Team.endsWith("D"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_E) > 0) {
-						if (s8s_init_players[i].Team.endsWith("E"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_F) > 0) {
-						if (s8s_init_players[i].Team.endsWith("F"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_G) > 0) {
-						if (s8s_init_players[i].Team.endsWith("G"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_H) > 0) {
-						if (s8s_init_players[i].Team.endsWith("H"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_I) > 0) {
-						if (s8s_init_players[i].Team.endsWith("I"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_J) > 0) {
-						if (s8s_init_players[i].Team.endsWith("J"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_K) > 0) {
-						if (s8s_init_players[i].Team.endsWith("K"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_L) > 0) {
-						if (s8s_init_players[i].Team.endsWith("L"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_M) > 0) {
-						if (s8s_init_players[i].Team.endsWith("M"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_N) > 0) {
-						if (s8s_init_players[i].Team.endsWith("N"))
-							s8s_players.push(structuredClone(s8s_init_players[i]));
+					for (j=0; j<s8s_TEAMS.length; j++) {
+						eval('if ((s8s_filterFlags & s8s_FILTER_TEAM_' + s8s_TEAMS[j] + ') > 0) {if (s8s_init_players[i].Team.endsWith("' + s8s_TEAMS[j] + '"))s8s_players.push(structuredClone(s8s_init_players[i]));}');
 					}
 				}
 			}
@@ -462,121 +348,15 @@ function load_player_stats() {
 		if (s8s_init_players_prev[i].Team.startsWith(s8s_$("dartclubs").value)) {
 			if ((s8s_filterFlags & s8s_FILTER_EINZEL) > 0) { 
 				if (!s8s_init_players_prev[i].Spieler.includes(" & ")) {
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_A) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("A"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_B) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("B"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_C) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("C"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_D) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("D"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_E) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("E"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_F) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("F"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_G) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("G"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_H) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("H"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_I) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("I"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_J) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("J"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_K) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("K"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_L) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("L"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_M) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("M"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_N) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("N"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
+					for (j=0; j<s8s_TEAMS.length; j++) {
+						eval('if ((s8s_filterFlags & s8s_FILTER_TEAM_' + s8s_TEAMS[j] + ') > 0) {if (s8s_init_players_prev[i].Team.endsWith("' + s8s_TEAMS[j] + '"))s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));}');
 					}
 				}
 			}
 			if ((s8s_filterFlags & s8s_FILTER_DOPPEL) > 0) { 
 				if (s8s_init_players_prev[i].Spieler.includes(" & ")) {
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_A) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("A"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_B) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("B"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_C) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("C"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_D) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("D"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_E) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("E"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_F) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("F"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_G) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("G"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_H) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("H"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_I) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("I"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_J) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("J"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_K) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("K"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_L) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("L"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_M) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("M"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
-					}
-					if ((s8s_filterFlags & s8s_FILTER_TEAM_N) > 0) {
-						if (s8s_init_players_prev[i].Team.endsWith("N"))
-							s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));
+					for (j=0; j<s8s_TEAMS.length; j++) {
+						eval('if ((s8s_filterFlags & s8s_FILTER_TEAM_' + s8s_TEAMS[j] + ') > 0) {if (s8s_init_players_prev[i].Team.endsWith("' + s8s_TEAMS[j] + '"))s8s_players_prev.push(structuredClone(s8s_init_players_prev[i]));}');
 					}
 				}
 			}
@@ -609,126 +389,19 @@ function load_player_stats() {
 }
 
 function invert_team_chkboxes() {
-
-	if (s8s_$("team_a") != null) {
-		s8s_$("team_a").checked = !s8s_$("team_a").checked;
-		if (s8s_$("team_a").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_a").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_a").value)));
-	}
-
-	if (s8s_$("team_b") != null) {
-		s8s_$("team_b").checked = !s8s_$("team_b").checked;
-		if (s8s_$("team_b").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_b").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_b").value)));
-	}
-
-	if (s8s_$("team_c") != null) {
-		s8s_$("team_c").checked = !s8s_$("team_c").checked;
-		if (s8s_$("team_c").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_c").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_c").value)));
-	}
-
-	if (s8s_$("team_d") != null) {
-		s8s_$("team_d").checked = !s8s_$("team_d").checked;
-		if (s8s_$("team_d").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_d").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_d").value)));
-	}
-
-	if (s8s_$("team_e") != null) {
-		s8s_$("team_e").checked = !s8s_$("team_e").checked;
-		if (s8s_$("team_e").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_e").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_e").value)));
-	}
-
-	if (s8s_$("team_f") != null) {
-		s8s_$("team_f").checked = !s8s_$("team_f").checked;
-		if (s8s_$("team_f").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_f").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_f").value)));
-	}
-
-	if (s8s_$("team_g") != null) {
-		s8s_$("team_g").checked = !s8s_$("team_g").checked;
-		if (s8s_$("team_g").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_g").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_g").value)));
-	}
-
-	if (s8s_$("team_h") != null) {
-		s8s_$("team_h").checked = !s8s_$("team_h").checked;
-		if (s8s_$("team_h").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_h").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_h").value)));
-	}
-
-	if (s8s_$("team_i") != null) {
-		s8s_$("team_i").checked = !s8s_$("team_i").checked;
-		if (s8s_$("team_i").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_i").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_i").value)));
-	}
 	
-	if (s8s_$("team_j") != null) {
-		s8s_$("team_j").checked = !s8s_$("team_j").checked;
-		if (s8s_$("team_j").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_j").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_j").value)));
+	for (i=0; i<s8s_TEAMS.length; i++) {
+		var team = s8s_TEAMS[i].toLowerCase();
+		eval('if (s8s_$("team_' + team + '") != null) {s8s_$("team_' + team + '").checked = !s8s_$("team_' + team + '").checked; if (s8s_$("team_' + team + '").checked) {s8s_filterFlags |= parseInt(s8s_$("team_' + team + '").value);} else {s8s_filterFlags &= (~(parseInt(s8s_$("team_' + team + '").value)));}}');
 	}
-	
-	if (s8s_$("team_k") != null) {
-		s8s_$("team_k").checked = !s8s_$("team_k").checked;
-		if (s8s_$("team_k").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_k").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_k").value)));
-	}
-	
-	if (s8s_$("team_l") != null) {
-		s8s_$("team_l").checked = !s8s_$("team_l").checked;
-		if (s8s_$("team_l").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_l").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_l").value)));
-	}
-	
-	if (s8s_$("team_m") != null) {
-		s8s_$("team_m").checked = !s8s_$("team_m").checked;
-		if (s8s_$("team_m").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_m").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_m").value)));
-	}
-	
-	if (s8s_$("team_n") != null) {
-		s8s_$("team_n").checked = !s8s_$("team_n").checked;
-		if (s8s_$("team_n").checked)
-			s8s_filterFlags |= parseInt(s8s_$("team_n").value);
-		else
-			s8s_filterFlags &= (~(parseInt(s8s_$("team_n").value)));
-	}
-	
+
 	load_player_stats();
 }
 
 function stats2tbl() {
 	s8s_$("stats").innerHTML = "";
 	var full_avg = 0.0;
-	var full_9d = 0.0;
+	var full_9d  = 0.0;
 	var full_12d = 0.0;
 	var full_15d = 0.0;
 	var full_18d = 0.0;
