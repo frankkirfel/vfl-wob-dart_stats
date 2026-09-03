@@ -45,7 +45,7 @@ select {
 	background-size: 12px;
 }
 
-select:focus {
+select :focus {
   outline: none;
   border-color: #0066ff;
   box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.2);
@@ -152,7 +152,7 @@ td.movedown.right {
 
 	select {
 		font-family: 'Roboto', sans-serif;
-		font-size: 0.9em;
+		font-size: 1em;
 	}
 
 	th {
