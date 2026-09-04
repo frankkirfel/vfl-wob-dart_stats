@@ -181,6 +181,16 @@ a.help:hover {
 	color: #fd5650;
 }
 
+@media (max-width: 1024px) {
+	th.leaderboard {
+		font-size: 0.85rem;
+	}
+
+	td.leaderboard {
+		font-size: 0.85rem;
+	}
+}
+
 @media (max-width: 768px) {
 	.table-responsive {
 	  width: 100%;
@@ -197,35 +207,6 @@ a.help:hover {
 	select {
 		font-family: 'Roboto', sans-serif;
 		font-size: 1rem;
-	}
-
-	th {
-		font-family: 'Roboto', sans-serif;
-		font-size: 0.8rem;
-		padding-top: 0.15rem;
-		padding-bottom: 0.15rem;
-		padding-left: 0.3rem;
-		padding-right: 0.3rem;
-		border: 0 solid;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
-	}
-
-	td {
-		font-family: 'Roboto', sans-serif;
-		font-size: 0.8rem;
-		text-align: center;
-		padding-top: 0.15rem;
-		padding-bottom: 0.15rem;
-		padding-left: 0.3rem;
-		padding-right: 0.3rem;
-		border: 0 solid;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
-		border-bottom-left-radius: 5px;
-		border-bottom-right-radius: 5px;
 	}
 
 	th.leaderboard {
