@@ -23,33 +23,33 @@
 		<div class="flex-container"><span class="status">Anm.: Punktspiele, die nicht mit der 2K-Software durchgef&uuml;hrt wurden, sind in dieser Statistik nicht erfasst.</span></div>
 		<div class="flex-container" style="height: 6em;"><select id="dartclubs" onchange="select_dartclub();"><option value="dummy">Dartverein</option></select></div>
 		<div class="table-responsive">
-		<table>
-			<tbody id="filters">
+		<table class="leaderboard controls">
+			<tbody id="filters" class="leaderboard controls">
 			</tbody>
 		</table>
 		</div>
 		<div class="flex-container" style="height: 1.0em;"></div>
 		<div class="table-responsive">
-		<table>
-			<thead>
-				<tr>
-				<th colspan=2 onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_PLATZ)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Platz</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_SPIELER)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Spieler</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_TEAM)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Team</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_AVG)); stats2tbl();" onmouseover="this.style.cursor='pointer'">AVG</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_SPIELE)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Spiele</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_GEWONNEN)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Gewonnen</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_180)); stats2tbl();" onmouseover="this.style.cursor='pointer'">180</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_140)); stats2tbl();" onmouseover="this.style.cursor='pointer'">140+</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_100)); stats2tbl();" onmouseover="this.style.cursor='pointer'">100+</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_80)); stats2tbl();" onmouseover="this.style.cursor='pointer'">80+</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_9D)); stats2tbl();" onmouseover="this.style.cursor='pointer'">&#x2300; 9D</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_12D)); stats2tbl();" onmouseover="this.style.cursor='pointer'">&#x2300; 12D</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_15D)); stats2tbl();" onmouseover="this.style.cursor='pointer'">&#x2300; 15D</th>
-				<th onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_18D)); stats2tbl();" onmouseover="this.style.cursor='pointer'">&#x2300; 18D</th>
+		<table class="leaderboard">
+			<thead class="leaderboard header">
+				<tr class="leaderboard header">
+				<th class="leaderboard header" colspan=2 onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_PLATZ)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Platz</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_SPIELER)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Spieler</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_TEAM)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Team</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_AVG)); stats2tbl();" onmouseover="this.style.cursor='pointer'">AVG</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_SPIELE)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Spiele</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_GEWONNEN)); stats2tbl();" onmouseover="this.style.cursor='pointer'">Gewonnen</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_180)); stats2tbl();" onmouseover="this.style.cursor='pointer'">180</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_140)); stats2tbl();" onmouseover="this.style.cursor='pointer'">140+</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_100)); stats2tbl();" onmouseover="this.style.cursor='pointer'">100+</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_80)); stats2tbl();" onmouseover="this.style.cursor='pointer'">80+</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_9D)); stats2tbl();" onmouseover="this.style.cursor='pointer'">&#x2300; 9D</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_12D)); stats2tbl();" onmouseover="this.style.cursor='pointer'">&#x2300; 12D</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_15D)); stats2tbl();" onmouseover="this.style.cursor='pointer'">&#x2300; 15D</th>
+				<th class="leaderboard header" onclick="s8s_players.sort(s8s_sort(s8s_SORT_BY_18D)); stats2tbl();" onmouseover="this.style.cursor='pointer'">&#x2300; 18D</th>
 				</tr>
 			</thead>
-			<tbody id="stats">
+			<tbody class="leaderboard" id="stats">
 			</tbody>
 		</table>
 		</div>
