@@ -99,13 +99,12 @@ td {
 	border-bottom-right-radius: 5px;
 }
 
-td.leaderboard {
-	background: #007f36;
+table.leaderboard {
+	border-spacing: 0 2px;
 }
 
-td.leaderboard.pos_l {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
+td.leaderboard {
+	background: #007f36;
 }
 
 td.leaderboard.odd {
@@ -114,6 +113,11 @@ td.leaderboard.odd {
 
 td.leaderboard.even {
 	background: #007030;
+}
+
+td.leaderboard.pos_l {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
 td.leaderboard.pos_r {
