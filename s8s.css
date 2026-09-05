@@ -141,7 +141,7 @@ td.leaderboard.moveup {
 }
 
 td.leaderboard.movedown {
-	color: #ff6060;
+	color: #ff6000;
 	width: 16px;
 	font-size: 0.6rem;
 	font-weight: 600;
@@ -150,7 +150,7 @@ td.leaderboard.movedown {
 	padding-bottom: 0;
 	padding-left: 0;
 	padding-right: 1px;
-	background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:%23ff6060;fill-opacity:1;' d='M 4.9290162,0.24027595 H 0.45965463 L 2.7308836,11.759724 c 2.1981326,-11.51944805 0.018215,0.0024 2.1981326,-11.51944805 z' /%3E%3C/svg%3E");
+	background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:%23ff6000;fill-opacity:1;' d='M 4.9290162,0.24027595 H 0.45965463 L 2.7308836,11.759724 c 2.1981326,-11.51944805 0.018215,0.0024 2.1981326,-11.51944805 z' /%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: center;
 }
