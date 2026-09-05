@@ -59,6 +59,18 @@ select {
 	background-size: 12px;
 }
 
+div.leaderboard {
+	visibility: visible;
+}
+
+div.player_search {
+	visibility: visible;
+}
+
+div#player_search {
+	visibility: hidden;
+}
+
 select:focus {
   outline: none;
   /* border-color: #0066ff; */
