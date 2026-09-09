@@ -1,9 +1,9 @@
 {
 	"name": "VfL WOB Dart - Spieler-Statistik Liga-Saison 2026/27",
-	"short_name": "Dart Liga 2026/27",
+	"short_name": "VfL WOB Dart 2026/27",
 	"start_url": "https://frankkirfel.github.io/vfl-wob-dart_stats/index.html",
 	"display": "standalone",
-	"background_color": "#ffffff",
+	"background_color": "#007f36",
 	"theme_color": "#000000",
 	"icons": [
 		{
