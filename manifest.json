@@ -4,7 +4,7 @@
 	"start_url": "https://frankkirfel.github.io/vfl-wob-dart_stats/index.html",
 	"display": "standalone",
 	"background_color": "#007f36",
-	"theme_color": "#007f36",
+	"theme_color": "#09633d",
 	"icons": [
 		{
 			"src": "./icon.svg",
