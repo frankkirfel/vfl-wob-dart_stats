@@ -274,7 +274,7 @@ a.help:hover {
 	}
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 	.table-responsive {
 		width: 100%;
 		overflow-x: auto;
