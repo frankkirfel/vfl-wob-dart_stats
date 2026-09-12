@@ -153,6 +153,10 @@ td.leaderboard.pos_r {
 	border-bottom-left-radius: 0;
 }
 
+.player_pos {
+	text-align: right;
+}
+
 td.leaderboard.footer {
 	padding-top: 0.2rem;
 	padding-bottom: 0.2rem;
