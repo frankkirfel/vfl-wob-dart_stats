@@ -17,7 +17,7 @@ html {
 	--color08: #80ff68; /* up */
 	--color09: #ff6060; /* down */
 	--color10: #f8e6ce; /* phr@nkie */
-	--color11: #ede7de;
+	--color11: #a1dc9b;
 	--color12: #d0d0c0;
 	--color13: #404040;
 	--color14: #ff2020;
@@ -295,34 +295,34 @@ th.leaderboard.header {
 
 .moveup {
 	color: var(--color08);
-	width: 16px;
+	width: 1rem;
 	font-size: 0.6rem;
 	font-weight: 500;
 	text-align: right;
 	padding-top: 0;
 	padding-bottom: 0;
-	padding-left: 4px;
-	padding-right: 1px;
+	padding-left: 0.5rem;
+	padding-right: 0.125rem;
 	background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath  style='fill:%2380ff68;fill-opacity:1;' d='M 4.9290162,11.759724 H 0.45965463 L 2.7308836,0.24027595 C 4.9290162,11.759724 2.7490981,0.23784742 4.9290162,11.759724 Z' /%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: 16px;
+	background-size: 1rem;
 }
 
 .movedown {
 	color: var(--color09);
-	width: 16px;
+	width: 1rem;
 	font-size: 0.6rem;
 	font-weight: 600;
 	text-align: right;
 	padding-top: 0;
 	padding-bottom: 0;
-	padding-left: 4px;
-	padding-right: 1px;
+	padding-left: 0.5rem;
+	padding-right: 0.125rem;
 	background-image: url("data:image/svg+xml,%3Csvg width='16' height='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:%23ff6060;fill-opacity:1;' d='M 4.9290162,0.24027595 H 0.45965463 L 2.7308836,11.759724 c 2.1981326,-11.51944805 0.018215,0.0024 2.1981326,-11.51944805 z' /%3E%3C/svg%3E");
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: 16px;
+	background-size: 1rem;
 }
 
 td.player_search {
