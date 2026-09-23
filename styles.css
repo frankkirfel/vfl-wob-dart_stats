@@ -551,8 +551,8 @@ input[type="text"] {
 	}
 
 	.table-responsive table {
-		width: max-content;
-		min-width: 100%;
+		width: 85%;
+		min-width: max-content;
 		border-collapse: collapse;
 	}
 
