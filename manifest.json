@@ -1,0 +1,25 @@
+{
+	"name": "VfL Wolfsburg Dart - Spielerstatistik Liga-Saison 2026/27",
+	"short_name": "VfL Wob Dart 2026/27",
+	"start_url": "./statistics.html",
+	"display": "standalone",
+	"background_color": "#007f36",
+	"theme_color": "#09633d",
+	"icons": [
+		{
+			"src": "./icon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		},
+		{
+			"src": "./icon-192.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "./icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
