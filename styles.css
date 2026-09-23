@@ -408,7 +408,7 @@ a.help {
 input[type="text"] {
 	flex-shrink: 0;
 	font-size: 0.9rem;
-	width: 8rem;
+	width: 9rem;
 
 	border: 2px solid var(--color11);
 	border-radius: 4px;
@@ -528,8 +528,8 @@ input[type="text"] {
 	}
 
 	input[type="text"] {
-		font-size: 0.85rem;
-		width: 7rem;
+		font-size: 0.8rem;
+		width: 8rem;
 	}	
 
 	.custchkbox .chkboxtxt {
