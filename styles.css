@@ -379,6 +379,10 @@ a.help {
 
 
 .addon {
+	color: var(--color11);
+}
+
+.addon.selected {
 	color: var(--color08);
 }
 
@@ -431,7 +435,7 @@ input[type="text"] {
 }
 
 /* Die eigentliche Checkbox */
-.custchkbox input[type="checkbox"] {
+.custchkbox input[type="checkbox"], input[type="radio"] {
 	/* Entfernt das native Design auf PC & Mobilgeräten */
 	appearance: none;
 	-webkit-appearance: none;
@@ -452,6 +456,93 @@ input[type="text"] {
 	cursor: pointer;
 	outline: none;
 }
+
+/* Container-Styling */
+.custradio {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+	font-family: 'Roboto', sans-serif;
+	color: var(--color01);
+}
+
+/* Der eigentliche Radio-Button */
+.custradio input[type="radio"] {
+	/* Entfernt das native Design auf PC & Mobilgeräten */
+	appearance: none;
+	-webkit-appearance: none;
+
+	/* Exakte Dimensionen erzwingen */
+	width: var(--chkbox-size); /* Nutzt dieselbe Größe für Konsistenz */
+	height: var(--chkbox-size);
+	flex-shrink: 0; /* Verhindert das Stauchen bei langem Text */
+
+	/* Styling im inaktiven Zustand */
+	border: 2px solid var(--color11);
+	border-radius: 50%; /* 50% macht das Feld perfekt rund */
+	background-color: var(--color01);
+	box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.9);
+
+	/* Weicher Übergang bei Interaktionen */
+	transition: all 0.2s ease-in-out;
+	cursor: pointer;
+	outline: none;
+}
+
+.custradio input[type="radio"]:checked {
+	background-color: var(--color07); /* Füllt den Kreis mit deiner Hauptfarbe */
+	border-color: var(--color11);
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5); /* Optionaler Leuchteffekt nach außen */
+}
+
+.adjustment {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 16rem;
+  height: 12px;
+  border-radius: 6px;
+  background: var(--color11);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s ease-in-out;
+  transition: opacity .2s ease-in-out;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--color07);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background: var(--color07);
+  cursor: pointer;
+}
+
+#tbl_adjustment {
+	width: 480px;
+}
+
+#td_slider: {
+	padding-left: 20px;
+}
+
+
 
 /* Zustand: Hover (nur auf Geräten mit Maus) */
 @media (hover: hover) {
@@ -614,5 +705,23 @@ input[type="text"] {
 
 	.quote {
 		font-size: 0.65rem;
+	}
+}
+
+@media (max-width: 479px) {
+	#svg_stufe, #svg_linear, #svg_exponential {
+		width: 100px;
+	}
+	
+	#tbl_adjustment {
+		width: 400px;
+	}
+
+	#td_slider: {
+		padding-left: 40px;
+	}
+
+	.slider {
+		width: 10rem;
 	}
 }
