@@ -703,13 +703,13 @@ input[type="text"] {
 /* } */
 
 @media (max-width: 979px) {
-	.table-responsive {
+	.table-responsive.leaderboard {
 		width: 100%;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 	}
 
-	.table-responsive table {
+	.table-responsive.leaderboard table {
 		width: 85%;
 		min-width: max-content;
 		border-collapse: collapse;
@@ -777,6 +777,18 @@ input[type="text"] {
 }
 
 @media (max-width: 479px) {
+	.table-responsive.matrix {
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.table-responsive.matrix table {
+		width: 85%;
+		min-width: max-content;
+		border-collapse: collapse;
+	}
+
 	#svg_stufe, #svg_linear, #svg_exponential {
 		width: 100px;
 	}
