@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#09633d">
+    <title>Teams&nbsp;-&nbsp;MATRIX</title>
+	<link rel="manifest" href="./manifest.json">
+	<link rel="apple-touch-icon" href="./icon-192.png">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<script src="./jscript/s4d.js" type="text/javascript"></script>
+	<script src="./jscript/m4x.js" type="text/javascript"></script>
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+	<div id="matrixDiv" class="flex-container">
+		<div id="vfl_wob_dart_logo_container" class="flex-container"></div>
+		<div class="flex-container"><span class="header">Teams&nbsp;-&nbsp;MATRIX</span></div>
+		<div class="flex-container"><span class="header">Liga-Saison 2026/27</span></div>
+		<div class="flex-container" style="height: 1.0rem;"></div>
+		<div id="leaderboard" class="table-responsive matrix">
+		<table class="leaderboard matrix">
+			<thead class="leaderboard header">
+				<tr class="leaderboard header">
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">Platz</th>
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">Verein</th>
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">Team</th>
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">P</th>
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">&sum;</th>
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">S</th>
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">U</th>
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">N</th>
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">Liga</th>
+				<th class="leaderboard matrix header" onclick="m4x_sort(this.innerHTML); build_matrix();" onmouseover="this.style.cursor='pointer'">Position</th>
+				<!-- <th class="leaderboard header">Statistik</th> -->
+				<!-- <th class="leaderboard header">Bilanz</th> -->
+				<!-- <th class="leaderboard header">Specials</th> -->
+				<th id="tgl_matrix" class="leaderboard matrix header" colspan="3"></th>
+				</tr>
+			</thead>
+			<tbody class="leaderboard" id="stats">
+			</tbody>
+		</table>
+		</div>
+
+		<div class="flex-container" style="height: 1.5rem;"></div>
+		<table>
+			<tbody>
+				<tr><td class="link" style="text-align: center; width:160px; height:25px" onclick="location.href='./statistics.html';" onmouseover="this.style.cursor='pointer'">Spielerstatistik</td></tr>
+				<tr><td></td></tr>
+				<tr><td class="link" style="text-align: center; width:160px; height:25px" onclick="location.href='./results.html';" onmouseover="this.style.cursor='pointer'">Spieler-Bilanz</td></tr>
+				<tr><td></td></tr>
+				<tr><td class="link" style="text-align: center; width:160px; height:25px" onclick="location.href='./specials.html';" onmouseover="this.style.cursor='pointer'">Specials</td></tr>
+				<tr><td></td></tr>
+				<!-- <tr><td class="link" style="text-align: center; width:160px; height:25px" onclick="location.href='./matrix.html';" onmouseover="this.style.cursor='pointer'">Teams&nbsp;-&nbsp;MATRIX</td></tr> -->
+				<!-- <tr><td></td></tr> -->
+				<tr><td class="link" style="text-align: center; width:160px; height:25px" onclick="location.href='./index.html';" onmouseover="this.style.cursor='pointer'">Hauptmen&uuml;</td></tr>
+			</tbody>
+		</table>
+		<div class="flex-container" style="height: 1.5rem;"></div>
+		<div id="phrankie_container" class="flex-container"></div>
+		<div class="flex-container" style="height: 3rem;"></div>
+		<!-- <div class="flex-container"><span class="link"><a class="help" href="./statistics.html" target="_self">&nbsp;Spielerstatistik&nbsp;</a></span></div> -->
+		<!-- <div class="flex-container" style="height: 0.8rem;"></div> -->
+		<!-- <div class="flex-container"><span class="link"><a class="help" href="./results.html" target="_self">&nbsp;Spieler-Bilanz&nbsp;</a></span></div> -->
+		<!-- <div class="flex-container" style="height: 0.8rem;"></div> -->
+		<!-- <div class="flex-container"><span class="link"><a class="help" href="./specials.html" target="_self"><span style="color:var(--color14);"><b>&nbsp;NEU &nbsp; </span>Bestleistungen (Specials)<span style="color:var(--color14);"> &nbsp; NEU&nbsp;</span></a></span></div> -->
+		<!-- <div class="flex-container"><span class="link"><a class="help" href="./specials.html" target="_self">&nbsp;Bestleistungen (Specials)&nbsp;</a></span></div> -->
+		<!-- <div class="flex-container" style="height: 0.8rem;"></div> -->
+		<!-- <div class="flex-container"><span class="link"><a class="help" href="./calendars.html" target="_self">&nbsp;Kalendereinträge (*.ics)&nbsp;</a></span></div> -->
+		<!-- <div class="flex-container" style="height: 0.8rem;"></div> -->
+		<!-- <div class="flex-container"><span class="link"><a class="help" href="https://vfldart.my.canva.site/ligauebersicht" target="_blank">&nbsp;Ligen&uuml;bersicht&nbsp;</a></span></div> -->
+		<!-- <div class="flex-container" style="height: 2rem;"></div> -->
+	</div>
+    <script src="jscript/matrix.js"></script>
+</body>
+</html>
